@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-07-SpringBoot-Demo/spring-07-SpringBoot-Demo.iml" filepath="$PROJECT_DIR$/spring-07-SpringBoot-Demo/spring-07-SpringBoot-Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-08-MVC-Controller/spring-08-MVC-Controller.iml" filepath="$PROJECT_DIR$/spring-08-MVC-Controller/spring-08-MVC-Controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-training-practice.iml" filepath="$PROJECT_DIR$/spring-training-practice.iml" />
+    </modules>
+  </component>
+</project>
