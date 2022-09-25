@@ -11,6 +11,21 @@ public class LogInController {
 
         return "login.html";
     }
+
+
+        @RequestMapping("/welcome")
+        public String welcome(){
+
+            return "Student/welcome.html";
+        }
+
+    @RequestMapping()
+    public String welcome2(){
+
+        return "Student/welcome.html";
+    }
+
+
 }
 
 
