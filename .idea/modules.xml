@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring-07-SpringBoot-Demo/spring-07-SpringBoot-Demo.iml" filepath="$PROJECT_DIR$/spring-07-SpringBoot-Demo/spring-07-SpringBoot-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-08-MVC-Controller/spring-08-MVC-Controller.iml" filepath="$PROJECT_DIR$/spring-08-MVC-Controller/spring-08-MVC-Controller.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-09-MVC-Model/spring-09-MVC-Model.iml" filepath="$PROJECT_DIR$/spring-09-MVC-Model/spring-09-MVC-Model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-10-Thymeleaf/spring-10-Thymeleaf.iml" filepath="$PROJECT_DIR$/spring-10-Thymeleaf/spring-10-Thymeleaf.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-training-practice.iml" filepath="$PROJECT_DIR$/spring-training-practice.iml" />
     </modules>
   </component>
