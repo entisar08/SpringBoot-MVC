@@ -13,7 +13,7 @@ import java.util.List;
 
 public class MentorController {
 
-    @RequestMapping("/mentor")
+   /* @RequestMapping("/mentor")
     public String getMentors(Model model){
         Mentor mentor1=new Mentor("jade","Fade", Gender.FEMALE, 34);
         Mentor mentor2=new Mentor("Baha","Balin", Gender.FEMALE, 35);
@@ -25,14 +25,14 @@ public class MentorController {
 
 
         return "mentor/mentor";
-    }
+    }*/
 //OZZY solution
-    /*@RequestMapping("/list")
+    @RequestMapping("/list")
     public String showList(Model model){
         List<Mentor> mentorList=new ArrayList<>();
         mentorList.add(new Mentor("jade","Fade", Gender.FEMALE, 34));
-        mentorList.add(new Mentor("Baha","Balin", Gender.FEMALE, 35);
-        mentorList.add(new Mentor("Madi","Fadi", Gender.FEMALE, 31);
+        mentorList.add(new Mentor("Baha","Balin", Gender.FEMALE, 35));
+        mentorList.add(new Mentor("Madi","Fadi", Gender.FEMALE, 31));
 
         model.addAttribute("mentors", mentorList);
 
@@ -40,6 +40,5 @@ public class MentorController {
 
         return "mentor/mentor-list";
     }
-*/
 
 }
