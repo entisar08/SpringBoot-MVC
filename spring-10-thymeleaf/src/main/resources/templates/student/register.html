@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Cydeo </title>
+</head>
+<body>
+
+<h1>Thymeleaf Tags Practice </h1>
+
+<!--Display value  and concatenation of model-->
+
+
+<h2 th:text="${students.get(0).firstName +' '+ students.get(0).lastName}" ></h2>
+
+<!--creating links in Thymeleaf-->
+<!--absolute url-->
+<a th:href="@{https://cydeo.com}"> visit cydeo page </a> <br>
+<!--relative url-->
+
+<a th:href="@{/student/welcome}">welcome</a> <br>
+
+<!--Adding Parameter to a link and Capturing it by request param in controller-->
+<a th:href="@{/student/welcome(id=3)}">Capturing Id from link 1 </a> <br> <br>
+
+<!--to capture the id you need to add it to the welcome controller an d print it to the console -->
+
+<!--Can you pass a name in the browser's link-->
+
+<a th:href="@{/student/welcome(name=${students.get(0).firstName })}">Capturing name of student from link 2 </a>
+
+
+<ul>
+    <li th:each="name: ${students}"  th:text="${name.firstName}"></li>
+
+</ul>
+<h2>printing student in table </h2>
+
+<table>
+    <thead>
+    <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Age Name</td>
+        <td>state Name</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="student :${students}" >
+        <td th:text="${student.firstName}"> </td>
+        <td th:text="${student.lastName}"> </td>
+        <td th:text="${student.age}"> </td>
+        <td th:text="${student.state}"> </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
