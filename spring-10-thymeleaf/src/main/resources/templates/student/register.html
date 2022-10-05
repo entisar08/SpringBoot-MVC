@@ -2,11 +2,20 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
-    <title>Cydeo </title>
+    <title th:text="#{index.page.title}"> </title>
+    <link th:href="@{/css/bootstrap-4.1.3-dist/css/bootstrap.css}" rel="stylesheet">
+
+<!--    using custom css-->
+
+    <link  th:href="@{/css/custom.css}" rel="stylesheet" >
 </head>
 <body>
 
-<h1>Thymeleaf Tags Practice </h1>
+<h1 >Thymeleaf Tags Practice </h1> <br>
+<!--bootstrab integration-->
+<h1  class="display-1 text-danger" >Welcome to cydeo home page</h1> <br>
+<!--mycustom CSs-->
+<h1 class="cydeo">my Custom CSS</h1>
 
 <!--Display value  and concatenation of model-->
 
@@ -20,8 +29,16 @@
 
 <a th:href="@{/student/welcome}">welcome</a> <br>
 
+<!--including image-->
+
+<img th:src="@{/images/welcome-38249.png}">
+
+
+<!--Including repetitive fragments in UI repetitive  html code-->
+
+
 <!--Adding Parameter to a link and Capturing it by request param in controller-->
-<a th:href="@{/student/welcome(id=3)}">Capturing Id from link 1 </a> <br> <br>
+<!--<a th:href="@{/student/welcome(id=3)}">Capturing Id from link 1 </a> <br> <br>-->
 
 <!--to capture the id you need to add it to the welcome controller an d print it to the console -->
 
@@ -56,5 +73,20 @@
     </tbody>
 </table>
 
+
+<!--==================================Conditional Logic= =========================================-->
+<!--===having different view or simply viewing sentence based on condition=========================-->
+
+<div th:text="${students.get(0).age >25 ? 'Eligible':'NotEligible'}"></div>
+
+<div>
+    <span th:if="${students.get(0).getState()=='Texas'}"> It is texas </span>
+    <span th:unless="${students.get(0).getState()=='Texas'}">  it is not texas  </span>
+</div>
+
+
+<!--========================Bringing External data to view ====================-->
+<!--===============here create (messages .properties) and include key and value use it
+in the title to not hard code the title <title th:text="#{index.page.title}"> </title>=========-->
 </body>
 </html>
