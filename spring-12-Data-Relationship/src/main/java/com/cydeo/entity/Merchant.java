@@ -7,11 +7,11 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
-@Entity
+
 @Data
 @NoArgsConstructor
 @Table(name="merchants")
-
+@Entity
 public class Merchant {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -26,8 +26,8 @@ public class Merchant {
 //any merchant object has payment one seller has multiple payments (list of payment )
 
 
-    @OneToMany
-    private List<Payment> paymentList;
+   // @OneToMany(mappedBy="merchant")//in one to many relationship ownership belongs to many side
+   // private List<Payment> paymentList;
 
 
     public Merchant(String name, String code, BigDecimal transactionFee, BigDecimal commissionRate, Integer payoutDelayCount) {
