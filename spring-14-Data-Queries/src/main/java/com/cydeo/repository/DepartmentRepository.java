@@ -3,6 +3,7 @@ package com.cydeo.repository;
 
 import com.cydeo.entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
@@ -22,6 +23,11 @@ public interface DepartmentRepository extends JpaRepository<Department, String> 
     //display top 3 department with division name includes 'Hea' without duplicate
 
     List<Department> findDistinctTop3ByDivisionContains(String pattern);
+
+
+    //Natie query
+    @Query("SELECT d from Department d WHERE d.division IN  ?1")
+    List<Department> retrieveDepartmentDivision(List<String> division);
 
 
 

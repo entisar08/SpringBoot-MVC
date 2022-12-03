@@ -1,31 +1,28 @@
 package com.cydeo.entity;
 
-
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
 @Data
-@NoArgsConstructor
-@Table(name = "COURSES")
+@Entity
+@Table(name = "courses")
 public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     private Long id;
-    @Column(name="NAME")
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "name")
     private String name;
 
-    @Column(name="CATEGORY")
+    @Column(name = "category")
     private String category;
 
-    @Column(name="RATING")
+    @Column(name = "rating")
     private int rating;
 
-    @Column(name="DESCRIPTION")
+    @Column(name = "description")
     private String description;
-
-
 }
