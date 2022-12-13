@@ -11,5 +11,5 @@ public interface WeatherApiClient {
     @GetMapping("/current")
     WeatherDTO getCurrentWeather(@RequestParam(value = "access_key") String key,
                                  @RequestParam(value = "query") String city);
-
+//4aaf067546aecb6971322cffdb1e1267
 }
