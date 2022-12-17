@@ -21,4 +21,12 @@ class CalculatorTest {
         assertTrue(Calculator.operator.equals("add"));
 
     }
+@Test
+    void cas3() {
+
+        assertArrayEquals(new int[]{1,2,3}, new int[] {1,3,2});
+
+    }
+
+
 }
