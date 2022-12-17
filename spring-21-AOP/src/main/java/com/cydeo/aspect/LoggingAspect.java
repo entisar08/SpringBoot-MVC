@@ -14,15 +14,17 @@ import java.util.List;
 @Component
 public class LoggingAspect {
 
-    Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
-
-//    @Pointcut("execution(* com.cydeo.controller.CourseController.*(..))")
-//    public void myPointcut() {}
-//
-//    @Before("myPointcut()")
-//    public void log() {
-//        logger.info("Info log..........");
-//    }
+    Logger logger = LoggerFactory.getLogger(LoggingAspect.class);//many classes implementing logger,
+    // we gonna use loggerFactory to call getLogger Method
+    //
+    // creating point cut
+    @Pointcut("execution(* com.cydeo.controller.CourseController.*(..))")
+    public void myPointcut() {}
+//  creating advice
+    @Before("myPointcut()")
+    public void log() {
+        logger.info("Info log..........");
+    }
 //
 //    @Before("execution(* com.cydeo.controller.CourseController.*(..))")
 //    public void log() {
@@ -90,27 +92,27 @@ public class LoggingAspect {
 //                , joinPoint.getSignature().toShortString(), exception.getMessage());
 //    }
 
-    @Pointcut("@annotation(com.cydeo.annotation.LoggingAnnotation)")
-    public void loggingAnnotationPC() {}
-
-    @Around("loggingAnnotationPC()")
-    public Object anyLoggingAnnotationOperation(ProceedingJoinPoint proceedingJoinPoint) {
-
-        logger.info("Before -> Method: {} - Parameter {}"
-                , proceedingJoinPoint.getSignature().toShortString(), proceedingJoinPoint.getArgs());
-
-        Object result = null;
-
-        try {
-            result = proceedingJoinPoint.proceed();
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
-        }
-
-        logger.info("After -> Method: {} - Result: {}"
-                , proceedingJoinPoint.getSignature().toShortString(), result.toString());
-        return result;
-
-    }
+//    @Pointcut("@annotation(com.cydeo.annotation.LoggingAnnotation)")
+//    public void loggingAnnotationPC() {}
+//
+//    @Around("loggingAnnotationPC()")
+//    public Object anyLoggingAnnotationOperation(ProceedingJoinPoint proceedingJoinPoint) {
+//
+//        logger.info("Before -> Method: {} - Parameter {}"
+//                , proceedingJoinPoint.getSignature().toShortString(), proceedingJoinPoint.getArgs());
+//
+//        Object result = null;
+//
+//        try {
+//            result = proceedingJoinPoint.proceed();
+//        } catch (Throwable throwable) {
+//            throwable.printStackTrace();
+//        }
+//
+//        logger.info("After -> Method: {} - Result: {}"
+//                , proceedingJoinPoint.getSignature().toShortString(), result.toString());
+//        return result;
+//
+//    }
 
 }

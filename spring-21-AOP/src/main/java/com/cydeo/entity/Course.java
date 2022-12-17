@@ -4,6 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+
+
+import javax.persistence.*;
+import javax.persistence.Column;
+
 @Data
 @Entity
 @Table(name = "courses")
