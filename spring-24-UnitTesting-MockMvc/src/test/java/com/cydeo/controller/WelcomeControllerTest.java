@@ -26,8 +26,8 @@ public class WelcomeControllerTest {
                 .accept(MediaType.APPLICATION_JSON);
         // send the request
         MvcResult result=mvc.perform(request).andReturn();//like ping command perform will send the request
-        //and get results will be saved in results
-        //second verify response is "welcome"
+        //and get results will be saved in result
+        //second verify response using assertEqual
 
         assertEquals(200, result.getResponse().getStatus());// in this method we pass expected first actual second
         assertEquals("welcome", result.getResponse().getContentAsString());
@@ -38,7 +38,7 @@ public class WelcomeControllerTest {
         RequestBuilder request= MockMvcRequestBuilders.get("/welcome")
                 .accept(MediaType.APPLICATION_JSON);
         mvc.perform(request)
-                .andExpect(status().isOk())
+                .andExpect(status().isOk())//and expect acts like assert
                 .andExpect(content().string("welcome"))
                 .andReturn();
     }
