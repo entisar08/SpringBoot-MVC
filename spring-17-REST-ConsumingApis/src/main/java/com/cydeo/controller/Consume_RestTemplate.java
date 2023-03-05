@@ -50,7 +50,7 @@ public class Consume_RestTemplate {
         return restTemplate.exchange("https://dummyapi.io/data/v1/user?limit=10", HttpMethod.GET,entity,Object.class);
 
     }
-
+//you can use
 
 
 
